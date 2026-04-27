@@ -1,0 +1,34 @@
+info = [5,2,4,5,2,4,5,3] #grades list, u can change it it doesn`t matter anyway
+print("grades list: ")
+for i in info:
+    print(i,end= " ")
+#function to add new ratings to the list
+def insertpls(score):
+    info.append(score)
+#function for find amount of different numbers
+def howmanygradetypes(number):
+    return info.count(number)
+#function for counting the middle grade
+def getaveragegrade():
+    return sum(info) // len(info)
+answer = 0
+#cycle
+while answer != 4:
+    print("Input the command: 1 - adding new grades to the list\n2 - how much grades from different types\n3 - average number\n4 - exit from the app")
+    answer = int(input())
+    number = 0
+    if answer == 1:
+        print("Enter new grade: ")
+        number = int(input())
+        insertpls(number)
+        print("Grades list: ")
+        for i in info:
+            print(i,end= " ")
+    elif answer == 2:
+        print("Enter the grade: ")
+        number = int(input())
+        print(f"Amount of {number}:{howmanygradetypes(number)}")
+    elif answer == 3:
+        print(f"The average number is - {getaveragegrade()}")
+    elif answer == 4:
+        print("Bye bye")
